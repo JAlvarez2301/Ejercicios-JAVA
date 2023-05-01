@@ -10,21 +10,39 @@ import javax.swing.JOptionPane;
  *
  * @author Usuario
  */
-public class Ejercicio_17 {
+public class Ejercicio_18 {
 
     /*
-    Una empresa que se dedica a la venta de esinfectantes necesita un programa apra gestionar las facturas. En cada factura figuda: el codigo del artículo, la cantidad
-    vendida en litros y el precio por litro. Se pide 5 facturas introducidas:
-    Facturación total, cantidad en litros vendidos y cuantas facturas se emitieron de más de 600
+    Hacer unas modificaciones al ejercicio anterior suponiendo que no se introduce el precio por litro, solo existen
+    tres productos con precio:
+    1- 0,6 $/litro
+    2- 3$ litro
+    3- 1.25 $/litro
      */
     public static void main(String[] args) {
         int codigo, litros, litrosArticulo1 = 0, conteoMas600 = 0;
-        double precioLitro, importeFactura, facturacionTotal = 0;
+        double importeFactura, facturacionTotal = 0, precioLitro = 0;
 
         for (int i = 1; i <= 5; i++) {
-            codigo = Integer.parseInt(JOptionPane.showInputDialog("Artículo Nº " + i + "\n Introduzca el código: "));
+            do {
+
+                codigo = Integer.parseInt(JOptionPane.showInputDialog("Artículo Nº " + i + "\n Introduzca el código: "));
+            } while (codigo < 1 || codigo > 3);
+
             litros = Integer.parseInt(JOptionPane.showInputDialog("Artículo Nº " + i + "\n Introduzca la cantidad de litros vendida: "));
-            precioLitro = Double.parseDouble(JOptionPane.showInputDialog("Artículo Nº " + i + "\n Introduzca el precio / litro:"));
+
+            switch (codigo) {
+                case 1:
+                    precioLitro = 0.6;
+                    break;
+                case 2:
+                    precioLitro = 3;
+                    break;
+                case 3:
+                    precioLitro = 1.25;
+                    break;
+
+            }
 
             importeFactura = (double) litros * precioLitro;
             facturacionTotal += importeFactura;
