@@ -18,6 +18,8 @@ public class EjemploArrays {
     float[] estatura = new float[3];
     double[] estatura2 = new double[3];
     String[] nombre = new String [5];
+    boolean[] estado = new boolean[5];
+    char[] sexo = new char[4];
     
     //Para darle valores
     
@@ -30,7 +32,7 @@ public class EjemploArrays {
         }
         
      // Forma 2, crearlo y darle los valores directamente
-     int[] numeros = new int[5];
+     int[] numeros = new int [3];
      
     }
     
